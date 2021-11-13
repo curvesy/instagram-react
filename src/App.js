@@ -9,6 +9,8 @@ import LoginPage from "./pages/login";
 import SignUpPage from "./pages/signup";
 import NotFoundPage from "./pages/not-found";
 import PostModal from "./components/post/PostModal";
+import { CssBaseline, MuiThemeProvider } from "@material-ui/core";
+import theme from "./theme";
 
 function App() {
   const history = useHistory();
@@ -26,7 +28,9 @@ function App() {
   const isModalOpen = modal && prevLocation !== location;
 
   return (
-    <>
+    <MuiThemeProvider theme={theme}>
+      <CssBaseline />
+
       <Switch location={isModalOpen ? prevLocation.current : location}>
         <Route exact path="/" component={FeedPage} />
         <Route path="/explore" component={ExplorePage} />
@@ -39,7 +43,7 @@ function App() {
       </Switch>
 
       {isModalOpen && <Route exact path="/p/:postId" component={PostModal} />}
-    </>
+    </MuiThemeProvider>
   );
 }
 

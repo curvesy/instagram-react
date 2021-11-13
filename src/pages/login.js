@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 import {
   TextField,
@@ -7,16 +7,16 @@ import {
   Card,
   CardHeader,
   Typography,
-} from '@material-ui/core';
-import { useLoginPageStyles } from '../styles';
-import SEO from '../components/shared/Seo';
-import FacebookIconBlue from '../images/facebook-icon-blue.svg';
-import FacebookIconWhite from '../images/facebook-icon-white.png';
+} from "@material-ui/core";
+import { useLoginPageStyles } from "../styles";
+import SEO from "../components/shared/Seo";
+import FacebookIconBlue from "../images/facebook-icon-blue.svg";
+import FacebookIconWhite from "../images/facebook-icon-white.png";
 
 export function LoginWithFacebook({ color, iconColor, variant }) {
   const classes = useLoginPageStyles();
   const facebookIcon =
-    iconColor === 'blue' ? FacebookIconBlue : FacebookIconWhite;
+    iconColor === "blue" ? FacebookIconBlue : FacebookIconWhite;
 
   return (
     <Button fullWidth color={color} variant={variant}>
@@ -31,9 +31,7 @@ export function LoginWithFacebook({ color, iconColor, variant }) {
 }
 
 function LoginPage() {
-
   const classes = useLoginPageStyles();
-
 
   return (
     <>
